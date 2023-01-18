@@ -1,3 +1,5 @@
+cargo-features = ["strip"]
+
 [package]
 name = "ThisDir"
 version = "0.1.0"
@@ -7,3 +9,8 @@ edition = "2021"
 
 [dependencies]
 rocket = "0.4.11"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
